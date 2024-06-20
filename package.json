@@ -20,5 +20,8 @@
     "express-validator": "^7.1.0",
     "nodemon": "^3.1.4",
     "prisma": "^5.15.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
   }
 }
