@@ -1,7 +1,8 @@
 import express from "express";
 import dotEnv from "dotenv";
 import cors from "cors";
-import * as controllers from "./src/controllers/index.js";
+import * as controllers from "./src/controllers/index.ts";
+import { Request, Response } from "express";
 
 
 dotEnv.config();
@@ -10,7 +11,7 @@ app.use(express.json());
 app.use(cors({ origins: [`${process.env.ADMIN}`, `${process.env.FRONTEND}`] }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb' }));
-app.get('/', (req, res) => {
+app.get('/', (req : Request, res : Response) => {
     res.status(200).send(`Server running at port ${process.env.PORT}`);
 });
 
@@ -19,6 +20,6 @@ app.get('/blog/read', controllers.blogs.read);
 app.patch('/blog/update/:id', controllers.blogs.update);
 app.delete('/blog/delete/:id', controllers.blogs.del);
 
-app.listen(process.env.PORT, (req, res) => {
+app.listen(process.env.PORT, () => {
     console.log(`Server running at port ${process.env.PORT}`);
 });
