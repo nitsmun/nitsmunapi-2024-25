@@ -1,14 +1,14 @@
 import express from "express";
 import dotEnv from "dotenv";
 import cors from "cors";
-import * as controllers from "./src/controllers/index.ts";
+import * as controllers from "./src/controllers/index";
 import { Request, Response } from "express";
 
 
 dotEnv.config();
 const app = express();
 app.use(express.json());
-app.use(cors({ origins: [`${process.env.ADMIN}`, `${process.env.FRONTEND}`] }));
+app.use(cors({ origin: [`${process.env.ADMIN}`, `${process.env.FRONTEND}`] }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb' }));
 app.get('/', (req : Request, res : Response) => {

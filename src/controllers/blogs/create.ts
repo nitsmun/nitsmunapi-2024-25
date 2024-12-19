@@ -1,4 +1,4 @@
-import prisma from "../../../prisma/index.js";
+import prisma from "../../../prisma/index";
 import { Request, Response } from "express";
 
 const create = async (req : Request, res : Response) : Promise<void> => {
