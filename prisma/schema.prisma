@@ -20,3 +20,15 @@ model Blogs {
   thumbnail String
   createdAt DateTime @default(now()) @db.Date
 }
+
+model Participants {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  scholar_id      Int
+  branch          String
+  email           String
+  institute       String
+  paymentProof    String
+  committeeChoice String
+  createdAt       DateTime @default(now()) @db.Date
+}
