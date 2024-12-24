@@ -22,13 +22,17 @@ model Blogs {
 }
 
 model Participants {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  name            String
-  scholar_id      Int
-  branch          String
-  email           String
-  institute       String
-  paymentProof    String
-  committeeChoice String
-  createdAt       DateTime @default(now()) @db.Date
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  scholar_id   Int?           //optional
+  branch       String?        //optional
+  email        String
+  institute    String
+  paymentProof String
+  choice1      String
+  choice2      String
+  choice3      String
+  allotted     String
+  portfolio    String
+  createdAt    DateTime @default(now()) @db.Date
 }
