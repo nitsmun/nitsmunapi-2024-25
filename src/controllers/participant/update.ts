@@ -8,7 +8,7 @@ const updateParticipant = async(req: Request, res : Response) => {
 
     try {
         if(!id) {
-            return res.status(400).json({error : "No ID Found"}).send("Participant Updated Successfully");
+            return res.status(400).json({error : "No ID Found"});
         }
     
         const updatedParticipant = await prisma.participants.update({
@@ -28,7 +28,7 @@ const updateParticipant = async(req: Request, res : Response) => {
             }
         });
     
-        return res.status(200).json(updatedParticipant);
+        return res.status(200).json(updatedParticipant).send("Participant Added Successfully");
 
     } catch (error) {
         console.log(error);
