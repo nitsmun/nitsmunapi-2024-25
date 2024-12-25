@@ -1,3 +1,4 @@
-import * as blogs from "./blogs/index.ts";
+import * as blogs from "./blogs/index";
+import * as participant from "./participant/index";
 
-export { blogs };
+export { blogs,participant };
