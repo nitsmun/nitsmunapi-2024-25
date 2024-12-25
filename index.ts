@@ -4,7 +4,6 @@ import cors from "cors";
 import * as controllers from "./src/controllers/index";
 import { Request, Response } from "express";
 
-
 dotEnv.config();
 const app = express();
 app.use(express.json());
@@ -19,6 +18,8 @@ app.post('/blog/add', controllers.blogs.create);
 app.get('/blog/read', controllers.blogs.read);
 app.patch('/blog/update/:id', controllers.blogs.update);
 app.delete('/blog/delete/:id', controllers.blogs.del);
+
+app.patch('/participant/update/:id',controllers.participant.updateParticipant);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running at port ${process.env.PORT}`);
