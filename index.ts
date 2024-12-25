@@ -19,7 +19,9 @@ app.get('/blog/read', controllers.blogs.read);
 app.patch('/blog/update/:id', controllers.blogs.update);
 app.delete('/blog/delete/:id', controllers.blogs.del);
 
+app.post('/participant/add',controllers.participant.createParticipant);
 app.patch('/participant/update/:id',controllers.participant.updateParticipant);
+
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running at port ${process.env.PORT}`);
