@@ -45,6 +45,9 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
       error: "Participant creation failed!",
     });
   }
+
+  
+
 };
 
 export default createParticipant;
