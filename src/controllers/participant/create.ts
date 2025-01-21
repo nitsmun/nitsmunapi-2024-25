@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
+import * as utils from "../../utils";
 
 const prisma = new PrismaClient();
 
@@ -9,6 +10,7 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
     email,
     institute,
     paymentProof,
+    phone,
     scholar_id,
     branch,
     choice1,
@@ -24,6 +26,7 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
         name,
         email,
         institute,
+        phone,
         paymentProof,
         scholar_id,
         branch,
@@ -39,6 +42,14 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
       message: "Participant created successfully!",
       participant: newParticipant,
     });
+    try{
+      await utils.email.sendCongratulationsEmail(email);
+    }
+    catch(err){
+      res.status(402).json({
+        error:"Could not send email!!",
+      });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({
