@@ -9,6 +9,8 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
         email,
         institute,
         paymentProof,
+        previousExperience,
+        phone,
         scholar_id,
         branch,
         choice1,
@@ -16,8 +18,18 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
         choice3,
         allotted,
         portfolio,
+        members,
+        portfolioC11,
+        portfolioC12,
+        portfolioC13,
+        portfolioC21,
+        portfolioC22,
+        portfolioC23,
+        portfolioC31,
+        portfolioC32,
+        portfolioC33,
     } = req.body;
-    const id=req.params.id;
+    const id = req.params.id;
     try {
         if (!id) {
             res.status(400).json({ error: "No ID Found" });
@@ -39,6 +51,16 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
                 ...(choice3 && { choice3 }),
                 ...(allotted && { allotted }),
                 ...(portfolio && { portfolio }),
+                ...(members && { members }),
+                ...(portfolioC11 && { portfolioC11 }),
+                ...(portfolioC12 && { portfolioC12 }),
+                ...(portfolioC13 && { portfolioC13 }),
+                ...(portfolioC21 && { portfolioC21 }),
+                ...(portfolioC22 && { portfolioC22 }),
+                ...(portfolioC23 && { portfolioC23 }),
+                ...(portfolioC31 && { portfolioC31 }),
+                ...(portfolioC32 && { portfolioC32 }),
+                ...(portfolioC32 && { portfolioC32 }),
             },
         });
         res.status(200).json({

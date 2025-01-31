@@ -36,6 +36,16 @@ model Participants {
   choice3            String
   allotted           String   @default("PENDING")
   portfolio          String   @default("PENDING")
-  previousExperience String?
+  previousExperience String
+  members            String[]
+  portfolioC11       String
+  portfolioC12       String
+  portfolioC13       String
+  portfolioC21       String
+  portfolioC22       String
+  portfolioC23       String
+  portfolioC31       String
+  portfolioC32       String
+  portfolioC33       String
   createdAt          DateTime @default(now()) @db.Date
 }
