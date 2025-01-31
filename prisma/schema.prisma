@@ -22,17 +22,30 @@ model Blogs {
 }
 
 model Participants {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  name         String
-  scholar_id   Int?           //optional
-  branch       String?        //optional
-  email        String
-  institute    String
-  paymentProof String
-  choice1      String
-  choice2      String
-  choice3      String
-  allotted     String
-  portfolio    String
-  createdAt    DateTime @default(now()) @db.Date
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  name               String
+  scholar_id         String?
+  branch             String?
+  year               String?
+  email              String
+  phone              String
+  institute          String   @default("NIT SILCHAR")
+  paymentProof       String
+  choice1            String
+  choice2            String
+  choice3            String
+  allotted           String   @default("PENDING")
+  portfolio          String   @default("PENDING")
+  previousExperience String
+  members            String[]
+  portfolioC11       String
+  portfolioC12       String
+  portfolioC13       String
+  portfolioC21       String
+  portfolioC22       String
+  portfolioC23       String
+  portfolioC31       String
+  portfolioC32       String
+  portfolioC33       String
+  createdAt          DateTime @default(now()) @db.Date
 }
