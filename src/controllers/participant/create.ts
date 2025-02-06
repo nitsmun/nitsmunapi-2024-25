@@ -17,6 +17,7 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
     choice1,
     choice2,
     choice3,
+    choice4,
     allotted,
     portfolio,
     members,
@@ -29,6 +30,9 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
     portfolioC31,
     portfolioC32,
     portfolioC33,
+    portfolioC41,
+    portfolioC42,
+    portfolioC43,
   } = req.body;
 
   try {
@@ -44,6 +48,7 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
         choice1,
         choice2,
         choice3,
+        choice4,
         allotted,
         portfolio,
         members,
@@ -57,6 +62,9 @@ const createParticipant = async (req: Request, res: Response): Promise<void> => 
         portfolioC31,
         portfolioC32,
         portfolioC33,
+        portfolioC41,
+        portfolioC42,
+        portfolioC43
       },
     });
 

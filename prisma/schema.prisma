@@ -34,6 +34,7 @@ model Participants {
   choice1            String
   choice2            String
   choice3            String
+  choice4            String
   allotted           String   @default("PENDING")
   portfolio          String   @default("PENDING")
   previousExperience String
@@ -47,5 +48,8 @@ model Participants {
   portfolioC31       String
   portfolioC32       String
   portfolioC33       String
+  portfolioC41       String
+  portfolioC42       String
+  portfolioC43       String
   createdAt          DateTime @default(now()) @db.Date
 }
