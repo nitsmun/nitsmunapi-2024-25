@@ -16,6 +16,7 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
         choice1,
         choice2,
         choice3,
+        choice4,
         allotted,
         portfolio,
         members,
@@ -28,6 +29,9 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
         portfolioC31,
         portfolioC32,
         portfolioC33,
+        portfolioC41,
+        portfolioC42,
+        portfolioC43
     } = req.body;
     const id = req.params.id;
     try {
@@ -49,6 +53,7 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
                 ...(choice1 && { choice1 }),
                 ...(choice2 && { choice2 }),
                 ...(choice3 && { choice3 }),
+                ...(choice4 && { choice4 }),
                 ...(allotted && { allotted }),
                 ...(portfolio && { portfolio }),
                 ...(members && { members }),
@@ -60,7 +65,10 @@ const updateParticipant = async (req: Request, res: Response): Promise<void> => 
                 ...(portfolioC23 && { portfolioC23 }),
                 ...(portfolioC31 && { portfolioC31 }),
                 ...(portfolioC32 && { portfolioC32 }),
-                ...(portfolioC32 && { portfolioC32 }),
+                ...(portfolioC33 && { portfolioC33 }),
+                ...(portfolioC41 && { portfolioC41 }),
+                ...(portfolioC42 && { portfolioC42 }),
+                ...(portfolioC43 && { portfolioC43 }),
             },
         });
         res.status(200).json({
