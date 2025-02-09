@@ -12,7 +12,7 @@ app.use(cors({origin:true}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb' }));
 app.get('/', (req : Request, res : Response) => {
-    res.status(200).send(`Server running at port ${process.env.PORT}`);
+    res.status(200).send(`Server running at port ${process.env.PORT || 4000}`);
 });
 
 app.post('/blog/add', controllers.blogs.create);
@@ -22,8 +22,8 @@ app.delete('/blog/delete/:id', controllers.blogs.del);
 
 app.post('/participant/add',controllers.participant.createParticipant);
 app.patch('/participant/update/:id',controllers.participant.updateParticipant);
+app.get("/participant/list", controllers.participant.readParticipants);
 
-
-app.listen(process.env.PORT, () => {
-    console.log(`Server running at port ${process.env.PORT}`);
+app.listen(process.env.PORT || 4000, () => {
+    console.log(`Server running at port ${process.env.PORT || 4000}`);
 });
