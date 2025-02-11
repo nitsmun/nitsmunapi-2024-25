@@ -13,7 +13,7 @@ const readParticipants = async(req: Request, res: Response) : Promise<void> => {
             return;
         }
 
-        if(email === "subhajyotidey2910@gmail.com" || email === "subhajyoti_ug_23@cse.nits.ac.in" || email === "barnilsarma@gmail.com"){
+        if(email==="nitsmun@nits.ac.in" || email === "subhajyotidey2910@gmail.com" || email === "subhajyoti_ug_23@cse.nits.ac.in" || email === "barnilsarma@gmail.com"){
             const participants = await prisma.participants.findMany();
             res.status(200).json(participants);
         }
